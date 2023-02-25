@@ -1,23 +1,28 @@
+import React, { Component } from 'react'
 import logo from './Holberton_logo.jpg';
 import './App.css';
-import { getFullYear, getFooterCopy } from './utils'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>School dashboard</h1>
-      </header>
-      <body className="App-body">
-        <p>Login to access the full dashboard</p>
-      </body>
-
-      <footer className="App-footer">
-        <p>Copyright {getFullYear} - {getFooterCopy({getFullYear})}</p>
-      </footer>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+        <header>
+          <div className='App-header'>
+            <img src={logo} className='App-logo' alt='Holberton logo'/>
+            <h1>School dashboard</h1>
+          </div>
+        </header>
+        <div className='App-body'>
+          <p>Login to access the full dashboard</p>
+        </div>
+        <footer>
+          <div className='App-footer'>
+            <p>Copyright 2020 - holberton School</p>
+          </div>
+        </footer>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
