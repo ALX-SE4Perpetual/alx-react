@@ -6,14 +6,13 @@ module.exports = {
   entry: "./src/index.js",
   devtool: "inline-source-map",
   output: {
-    path: "./dist/",
+    path: "./dist",
     filename: "bundle.js",
   },
   devServer: {
     static: "./dist",
-  },
-  optimization: {
-    runtimeChunk: "single",
+    compress: true,
+	port: 8564,
   },
   module: {
     rules: [
@@ -24,8 +23,6 @@ module.exports = {
           modules: true 
         }, 
       },
-    ],
-    rules: [
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -39,6 +36,16 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+            }
+      }
     ],
   },
 };
