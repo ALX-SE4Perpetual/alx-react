@@ -1,1 +1,1 @@
-console.log("Holberton Main Dashboard");
+console.log('Holberton Dashboard');
