@@ -6,11 +6,11 @@ module.exports = {
   entry: "./src/index.js",
   devtool: "inline-source-map",
   output: {
-    path: path.resolve("./dist"),
-    filename: "./bundle.js",
+    path: "./dist/",
+    filename: "bundle.js",
   },
   devServer: {
-    static: "./dist/bundle.js",
+    static: "./dist",
   },
   optimization: {
     runtimeChunk: "single",
@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       { 
         test: /\.css$/, 
-        use: "css-loader", 
+        use:["style-loader", "css-loader"], 
         options: { 
           modules: true 
         }, 
@@ -29,8 +29,13 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
+          'file-loader',
           {
-            loader: 'file-loader',
+            loader: 'image-webpack-loader',
+			options: {
+		      bypassOnDebug: true,
+			  disable: true
+            },
           },
         ],
       },
