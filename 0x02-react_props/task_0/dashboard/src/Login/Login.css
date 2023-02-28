@@ -1,0 +1,31 @@
+.App-body {
+  height: 80vmin;
+  border-bottom: 2px solid #e0354b;
+}
+
+.App-body p {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 2rem;
+}
+
+.email,
+.password {
+  padding-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#email,
+#password {
+  margin: 0.5rem;
+  width: 20rem;
+  height: 1.5rem;
+}
+
+#submit {
+  margin: 1rem 2rem;
+  padding: 0.5rem 3rem;
+  color: white;
+  border: none;
+  background-color: #e0354b;
+}
