@@ -1,20 +1,15 @@
 import React from "react";
-import './Footer.css';
+import "./Footer.css";
 import { getFullYear, getFooterCopy } from "../utils/utils";
 
+function Footer() {
+  return (
+    <>
+      <div className="App-footer">
+        Copyright {getFullYear()} - {getFooterCopy()}
+      </div>
+    </>
+  );
+}
 
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <footer className="App-footer">
-          <p>
-            Copyright {getFullYear()} - {getFooterCopy()}
-          </p>
-        </footer>
-      </React.Fragment>
-    );
-  }
-};
-
-export default App;
+export default Footer;

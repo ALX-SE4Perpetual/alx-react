@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import "./Notifications.css";
 
-const NotificationItem = ({ type, value, html }) => {
-  if (value) return (<li data-notification-type={type}>{value}</li>)
-  if (html) return (<li data-notification-type={type} dangerouslySetInnerHTML={html}></li>)
-  return(<li data-notification-type={type}></li>)
+function NotificationItem({ type, html, value }) {
+  return (
+    <>
+      {type && value ? <li data-notification-type={type}>{value}</li> : null}
+      {html ? <li data-urgent dangerouslySetInnerHTML={{ __html: html }}></li> : null}
+    </>
+  );
 }
 
-export default NotificationItem
+export default NotificationItem;
